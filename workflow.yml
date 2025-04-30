@@ -1,0 +1,19 @@
+name: PR-Greeting
+on: [pull_request_target]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post PR message
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          message: "PR Raised"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+
